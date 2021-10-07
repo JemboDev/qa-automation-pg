@@ -7,7 +7,7 @@ class BlouseSearchCest
      *  */
     public function searchForBlouseCest(AcceptanceTester $I)
     {
-        $I->amOnPage(' ');
+        $I->amOnPage('');
 
         // Ждёмс прогрузку поиска и кликаем
         $I->waitForElement('#search_query_top');
@@ -15,10 +15,10 @@ class BlouseSearchCest
         $I->click('#searchbox > button');
 
         // Ждём прогрузки страницы с результами поиска, а конкретно кнопочки "Quick view" и жмакаем на неё
-        $I->waitForElement('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img');
-        $I->moveMouseOver('#center_column > ul > li > div > div.left-block > div > a.product_img_link > img');
-        $I->waitForElement('#center_column > ul > li > div > div.left-block > div > a.quick-view > span');
-        $I->click('#center_column > ul > li > div > div.left-block > div > a.quick-view > span');
+        $I->waitForElement('.left-block');
+        $I->moveMouseOver('.left-block');
+        $I->waitForElement('.quick-view');
+        $I->click('.quick-view');
 
         // Ждём пока откроется модальное окно
         $I->switchToIFrame('.fancybox-iframe');
